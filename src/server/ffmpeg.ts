@@ -7,6 +7,7 @@ async function get_video_meta_data(url: string): Promise<FFProbeDataStream[]> {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
     const ffProbe = spawnSync("ffprobe", ["-print_format", "json", "-show_format", "-show_streams", "-show_error", "-show_chapters", url]);
     console.log("ffprobe", ffProbe);
+    console.log("url", url);
     try {
         const ast =  ffProbe.stdout.toString()
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-call
