@@ -5,6 +5,7 @@ import {DataTable} from "./components/Table";
 
 export default async function Files() {
   const { files } = await api.file.getAll.query();
+  console.log("files out", files);
     return (
       <div className="flex w-full text-black">
         <div className="w-full">
