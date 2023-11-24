@@ -3,8 +3,9 @@ import { api } from "~/trpc/server";
 import FileUploadDialog from "./components/FileUploadDialog";
 import {DataTable} from "./components/Table";
 
-export default async function Files() {
-  const { files } = await api.file.getAll.query();
+export default function Files() {
+  // const { files } = await api.file.getAll.query();
+  const files = null;
   console.log("files out", files);
     return (
       <div className="flex w-full text-black">
