@@ -5,8 +5,6 @@ import { cookies } from "next/headers";
 import Navbar from "~/app/_components/NavBar/page";
 import Sidebar from "~/app/_components/SideBar/page";
 import { TRPCReactProvider } from "~/trpc/react";
-import { SessionProvider } from "next-auth/react";
-import { getServerAuthSession } from "~/server/auth";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",

@@ -2,7 +2,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { api } from "~/trpc/server";
 import FileUploadDialog from "./components/FileUploadDialog";
 import {DataTable} from "./components/Table";
-import { useState } from "react";
 
 export default async function Files() {
   const { files } = await api.file.getAll.query();

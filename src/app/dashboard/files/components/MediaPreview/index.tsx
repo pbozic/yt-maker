@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import { MediaTags } from '~/server/types';
+import type { MediaTags } from '~/server/types';
 import {
     Tabs,
     TabsContent,

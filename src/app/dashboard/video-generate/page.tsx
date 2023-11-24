@@ -1,6 +1,6 @@
 "use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState } from "react";
+// import { useState } from "react";
 import { api } from "~/trpc/react";
 import type { VideoBlockInfo } from "./components/VideoBlock";
 import { VideoBlock } from "./components/VideoBlock";
@@ -8,7 +8,7 @@ import { VideoBlock } from "./components/VideoBlock";
 export default function Dashboard() {
     const { data: allFiles } = api.file.getAll.useQuery();
     console.log("all", allFiles?.files)
-    const [videoFiles, setVideoFiles] = useState();
+    //const [videoFiles, setVideoFiles] = useState();
     const updateVideoBlock = (index: number, videoInfo: VideoBlockInfo) => {
         console.log("update", index, videoInfo)
     }
@@ -30,7 +30,7 @@ export default function Dashboard() {
                             </CardContent>
                         </Card>)
                     })} */}
-                    <VideoBlock index={0} updateVideoBlock={updateVideoBlock} files={allFiles?.files ?? []} />
+                    {/* <VideoBlock index={0} updateVideoBlock={updateVideoBlock} files={allFiles?.files ?? []} /> */}
                 </div>
             </CardContent>
           </Card>

@@ -20,7 +20,6 @@ import { MultiSelect } from "./Multiselect";
 import { format } from "date-fns";
 import { useState } from "react";
 import LoadingSpinner from "../../../_components/Loader"
-import { is } from "date-fns/locale";
 export const UploadFileQuery = z.object({
   name: z.string().min(2),
   file:  z.string(),
@@ -43,7 +42,7 @@ function getBase64(file: File) {
       return resolve(sha256.toString());
     };
     reader.onerror = function (error) {
-      return reject("error");
+      return reject(error);
     };
   });
 }

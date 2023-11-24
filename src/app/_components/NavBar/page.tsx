@@ -1,8 +1,6 @@
 
 // next simple component
 // import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import {signIn, signOut } from "next-auth/react"
 import Link from "next/link";
 import { getServerAuthSession } from "~/server/auth";
 

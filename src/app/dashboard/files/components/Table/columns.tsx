@@ -1,11 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Column, ColumnDef, filterFns, sortingFns } from "@tanstack/react-table"
-import { Media, Tag } from '~/../prisma/generated/zod';
-import { FilmIcon, GifIcon, SpeakerWaveIcon } from "@heroicons/react/24/outline"
+import {  filterFns, sortingFns } from "@tanstack/react-table"
+import type{ Column, ColumnDef } from "@tanstack/react-table"
+import type { Media, Tag } from '~/../prisma/generated/zod';
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
-import { tagsRouter } from "~/server/api/routers/tag";
 import { TypePopover } from "../TypePopover";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -42,7 +41,7 @@ const globalHeader = (text: string, column: Column<MediaTags>) => {
 
 export const columns: ColumnDef<MediaTags>[] = [
   {
-    accessorFn: (row: Media) => "",
+    accessorFn: () => "",
     accessorKey: "",
     id: "select",
     header: ({ table }) => (

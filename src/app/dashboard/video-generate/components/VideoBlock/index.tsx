@@ -1,9 +1,7 @@
 "use client"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
-import { api } from "~/trpc/react";
-import { MediaTags } from '~/server/types';
-import { Button } from "@/components/ui/button";
+import type { MediaTags } from '~/server/types';
 import {
     Sheet,
     SheetContent,
@@ -17,9 +15,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import {
     Select,
     SelectContent,
-    SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
@@ -34,17 +30,18 @@ interface VideoBlockProps {
     files: MediaTags[]
 }
 type VideoBlockType = "video" | "image" | "transition" | "audio"
-export function VideoBlock({index, updateVideoBlock, files}: VideoBlockProps) {
-    const [videoInfo, setVideoInfo] = useState<VideoBlockInfo | null>(null);
-    const [type, setType] = useState<VideoBlockType>("video");
-    const [mediaId, setMediaId] = useState<VideoBlockType>("video");
-    function handleUpdateVideoBlock() {
+export function VideoBlock() { //{index, updateVideoBlock, files}: VideoBlockProps
+    // const [videoInfo, setVideoInfo] = useState<VideoBlockInfo | null>(null);
+    // const [type, setType] = useState<VideoBlockType>("video");
+    // const [mediaId, setMediaId] = useState<VideoBlockType>("video");
+    // function handleUpdateVideoBlock() {
      
-        updateVideoBlock(index, videoInfo!)
-    }
-    function handleSetMediaId(mediaId: string) {
+    //     updateVideoBlock(index, videoInfo!)
+    // }
+    // function handleSetMediaId(mediaId: string) {
 
-    }
+    // }
+    const [type, setType] = useState<VideoBlockType>("video");
     return (
       <div className="flex w-full">
            <Card className="w-full h-48">
@@ -52,7 +49,7 @@ export function VideoBlock({index, updateVideoBlock, files}: VideoBlockProps) {
 
             </CardHeader>
             <CardContent>
-            {!videoInfo && <div className="w-full h-100 text-center">
+            {/* {!videoInfo && <div className="w-full h-100 text-center"> */}
                     <Sheet >
                         <SheetTrigger asChild className="items-end cursor-pointer text-blue-500">
                             <div>
@@ -77,7 +74,7 @@ export function VideoBlock({index, updateVideoBlock, files}: VideoBlockProps) {
                             
                         </SheetContent>
                     </Sheet>
-                </div>}
+                {/* </div>} */}
             </CardContent>
           </Card>
       </div>
