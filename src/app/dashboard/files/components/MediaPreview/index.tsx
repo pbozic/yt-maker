@@ -1,7 +1,6 @@
 "use client"
 
 import Image from 'next/image';
-import type { MediaTags } from '~/server/types';
 import {
     Tabs,
     TabsContent,
@@ -11,6 +10,7 @@ import {
   import type {FFProbeDataStream} from "~/server/types";
   import { ScrollArea } from "@/components/ui/scroll-area"
 
+import type { MediaTags } from '~/server/types';
 // eslint-disable-next-line @typescript-eslint/require-await
 export default function MediaPreview({media}: {media: MediaTags}) {
    

@@ -1,9 +1,6 @@
-import { Media, Tag } from '~/../prisma/generated/zod';
-export type MediaTags = Media & {
-    tags: Tag[]
-}
 
-
+import type { RouterOutputs } from "~/trpc/shared";
+export type MediaTags = RouterOutputs['file']['getAll']['files'][0];
 
 export type FFProbeDataStreamArray = FFProbeDataStream[]
 

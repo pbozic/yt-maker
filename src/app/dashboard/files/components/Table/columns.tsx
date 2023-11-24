@@ -2,14 +2,32 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import {  filterFns, sortingFns } from "@tanstack/react-table"
 import type{ Column, ColumnDef } from "@tanstack/react-table"
-import type { Media, Tag } from '~/../prisma/generated/zod';
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
 import { TypePopover } from "../TypePopover";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-type MediaTags = Media & {
-  tags: Tag[]
+type MediaTags = {
+  id: string;
+  title: string;
+  type: string;
+  duration: number;
+  width: number;
+  height: number;
+  tags: {
+    id: string;
+    name: string;
+  }[];
+  createdAt: Date;
+}
+type Media = {
+  id: string;
+  title: string;
+  type: string;
+  duration: number;
+  width: number;
+  height: number;
+  createdAt: Date;
 }
 function format(s: number) {
    const Hms = new Date(s * 1000).toISOString().slice(11, 19);

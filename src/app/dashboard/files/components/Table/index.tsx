@@ -1,8 +1,6 @@
 "use client"
 import { columns } from "./columns"
-import { Media, Tag } from '~/../prisma/generated/zod';
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   getExpandedRowModel,
@@ -10,7 +8,8 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { TypePopover } from "../TypePopover";
+
+import type {ColumnDef} from "@tanstack/react-table"
 import {
   Table,
   TableBody,
@@ -20,16 +19,13 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import MediaPreview from "../MediaPreview";
-
-interface DataTableProps<TData, TValue> {
+import type { MediaTags } from '~/server/types';
+interface DataTableProps<TData> {
   data: TData[]
 }
-type MediaTags = Media & {
-  tags: Tag[]
-}
-export function DataTable<TData, TValue>({
+export function DataTable<TData>({
   data,
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<TData>) {
   //eslint-disable-next-line
   const table = useReactTable({
     data,
