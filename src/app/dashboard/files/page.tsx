@@ -18,7 +18,7 @@ export default function Files() {
                     Files
                   </div>
                   <div className="button">
-                    {/* <FileUploadDialog /> */}
+                    <FileUploadDialog />
                   </div>
                 </div>
                 </CardTitle>
