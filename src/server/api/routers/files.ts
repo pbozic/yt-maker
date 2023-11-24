@@ -87,6 +87,9 @@ export const filesRouter = createTRPCRouter({
 
 
   getAll: protectedProcedure.query(async ({ctx}) => {
+    return {
+      files: []
+    }
     const files = await ctx.db.media.findMany({
       include: {
         tags: true
